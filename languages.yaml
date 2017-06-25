@@ -3,6 +3,11 @@ en:
     TITLE: My Blog
     DESCRIPTION: Design cannot rescue failed content
     COPYRIGHT: © Copyright %s
+  BLOG:
+    ITEM:
+      CONTINUE_READING: Continue reading...
+      NEXT_POST: Next Post
+      PREV_POST: Previous Post
   SUBSCRIBE: Subscribe
   TWEET: Tweet
   SHARE: Share
