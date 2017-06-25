@@ -1,0 +1,10 @@
+name: Tufte
+version: 0.0.1
+description: a minimalist blog-like theme that attempts to be a faithful implementation of the tufte-css project
+author:
+  name: Karl Ding
+  email: karlding@users.noreply.github.com
+  url: https://justkding.me
+homepage: https://github.com/karlding/grav-theme-tufte
+bugs: https://github.com/karlding/grav-theme-tufte/issues
+license: MIT
