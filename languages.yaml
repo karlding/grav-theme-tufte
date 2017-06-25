@@ -1,0 +1,10 @@
+en:
+  SITE:
+    TITLE: My Blog
+    DESCRIPTION: Design cannot rescue failed content
+    COPYRIGHT: © Copyright %s
+  SUBSCRIBE: Subscribe
+  TWEET: Tweet
+  SHARE: Share
+  MONTHS_OF_THE_YEAR: [January, February, March, April, May, June, July, August, September, October, November, December]
+  DAYS_OF_THE_WEEK: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]
