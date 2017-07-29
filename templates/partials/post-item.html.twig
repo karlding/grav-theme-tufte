@@ -1,12 +1,17 @@
 <section>
   <header>
-    <h2>{{ page.title }}</h2>
+    <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
     <p>
-      <time datetime="{{ page.date|date("c") }}">{{ page.date|date('D') }} {{ 'MONTHS_OF_THE_YEAR'|ta(post.date|date('n') - 1) }} {{ page.date|date('j, Y') }}</time> in
+      <time datetime="{{ page.date|date("c") }}">{{ page.date|date('D') }} {{ 'MONTHS_OF_THE_YEAR'|ta(page.date|date('n') - 1) }} {{ page.date|date('j, Y') }}</time>
       {% if page.taxonomy.tag %}
+        in
         {% for tag in page.taxonomy.tag %}
           <a href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}" rel="tag">{{ tag }}</a>
         {% endfor %}
+      {% endif %}
+      <span class="middotDivider"></span>
+      {% if config.plugins.readingtime.enabled %}
+        {{ page.content|readingtime({'format': '{minutes_short_count} {minutes_text}', 'round':'minutes'}) }} read
       {% endif %}
     </p>
   </header>

@@ -1,0 +1,11 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set collection = page.collection %}
+{% set pagination = collection.params.pagination %}
+
+{% block content %}
+  {% for page in collection %}
+    {% set truncate = true %}
+    {% include 'partials/post-item.html.twig' %}
+  {% endfor %}
+{% endblock %}
