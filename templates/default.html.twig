@@ -1,0 +1,36 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block navigation %}
+{% endblock %}
+
+{% block body %}
+<body id="full-width">
+  <div id="main-page">
+    <h1>{{ theme_config.author }}</h1>
+    {{ page.content }}
+    <ul id="index">
+      {% if theme_config.social.github %}
+        {% include 'partials/github_link.html.twig' %}
+      {% endif %}
+      <li>
+        <a href="/thoughts">thoughts</a>
+      </li>
+      {% if theme_config.social.linkedin %}
+        {% include 'partials/linkedin_link.html.twig' %}
+      {% endif %}
+      {% if theme_config.social.twitter %}
+        {% include 'partials/twitter_link.html.twig' %}
+      {% endif %}
+      {% if theme_config.social.hn %}
+        {% include 'partials/hn_link.html.twig' %}
+      {% endif %}
+      {% if theme_config.resume %}
+        {% include 'partials/resume_link.html.twig' %}
+      {% endif %}
+    </ul>
+  </div>
+</body>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,49 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+  <head>
+    {% block head %}
+      <title>{% if header.title %}{{ header.title|e('html') }} - {% endif %}{{ 'SITE.TITLE'|t|e('html') }}</title>
+      {% block stylesheets %}
+        {% do assets.addCss('theme://css/tufte.css',100) %}
+        {% do assets.addCss('theme://css/latex.css') %}
+        {% do assets.addCss('theme://css/site.css') %}
+
+        {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+          {% do assets.addCss('theme://css/nucleus-ie9.css') %}
+          {% do assets.addCss('theme://css/pure-0.5.0/grids-min.css') %}
+          {% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
+        {% endif %}
+
+        {{ assets.css() }}
+      {% endblock %}
+
+    {% endblock %}
+  </head>
+  {% block body %}
+  <body>
+    {% block navigation %}
+    <header class="brand">
+      <h1>{{ 'SITE.TITLE'|t }}</h1>
+      {% include 'partials/navigation.html.twig' %}
+    </header>
+    {% endblock %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    {% block footer %}
+    <footer class="site-footer">
+      {% include 'partials/footer.html.twig' %}
+    </footer>
+    {% endblock %}
+    {% block javascripts %}
+    {% endblock %}
+    {% block analytics %}
+      {% if theme_config.analytics.google %}
+        {% include 'partials/analytics.html.twig' %}
+      {% endif %}
+    {% endblock %}
+  {% endblock %}
+  </body>
+</html>
