@@ -6,7 +6,7 @@
       {% if page.taxonomy.tag %}
         in
         {% for tag in page.taxonomy.tag %}
-          <a href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}" rel="tag">{{ tag }}</a>
+          <a href="{{ page.parent().url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}" rel="tag">{{ tag }}</a>
         {% endfor %}
       {% endif %}
       <span class="middotDivider"></span>

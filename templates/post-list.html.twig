@@ -5,7 +5,6 @@
 
 {% block content %}
   {% for page in collection %}
-    {% set truncate = true %}
-    {% include 'partials/post-item.html.twig' %}
+    {% include 'partials/post-item.html.twig' with {'truncate': true } %}
   {% endfor %}
 {% endblock %}
