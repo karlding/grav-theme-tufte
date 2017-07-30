@@ -13,6 +13,9 @@
       {% if config.plugins.readingtime.enabled %}
         {{ page.content|readingtime({'format': '{minutes_short_count} {minutes_text}', 'round':'minutes'}) }} read
       {% endif %}
+      {% if page.header.shares %}
+      &mdash; shared on {% for medium, url in page.header.shares %}{% if loop.last %} and {% elseif not loop.first %}, {% endif %}<a href="{{ url }}">{{ medium }}</a>{% endfor %}
+      {% endif %}
     </p>
   </header>
   {% if page.header.continue_link is sameas(false) %}

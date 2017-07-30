@@ -1,11 +1,15 @@
 ---
 title: "Tufte CSS is for Lovers"
 taxonomy:
+  category: thoughts
   tag:
     - CSS
 date: "2017-02-01"
-categories:
-  - design
+shares:
+  Hacker News: https://news.ycombinator.com
+  Lobsters: https://lobste.rs
+  Reddit: https://reddit.com
+  Product Hunt: https://www.producthunt.com/
 ---
 
 Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.
