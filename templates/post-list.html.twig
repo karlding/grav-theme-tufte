@@ -1,10 +1,13 @@
 {% extends 'partials/base.html.twig' %}
 
-{% set collection = page.collection %}
-{% set pagination = collection.params.pagination %}
+{% set collection = page.collection() %}
 
 {% block content %}
   {% for page in collection %}
-    {% include 'partials/post-item.html.twig' with {'truncate': true } %}
+    {% include 'partials/post-item.html.twig' with {'truncate': true, 'page': page } %}
   {% endfor %}
+
+  {% if config.plugins.pagination.enabled and collection.params.pagination %}
+    {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+  {% endif %}
 {% endblock %}
